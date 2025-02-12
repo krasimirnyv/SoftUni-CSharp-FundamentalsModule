@@ -5,21 +5,21 @@ class Program
 {
     static void Main()
     {
-        uint lines = uint.Parse(Console.ReadLine());
+        int lines = int.Parse(Console.ReadLine());
 
-        uint biggestSnow = 0, biggestTime = 0, biggestQuality = 0;
+        int biggestSnow = 0, biggestTime = 0, biggestQuality = 0;
             
         BigInteger biggestValue = 0;
     
         for (int i = 0; i < lines; i++)
         {
-            uint snow = uint.Parse(Console.ReadLine());
-            uint time = uint.Parse(Console.ReadLine());
-            uint quality = uint.Parse(Console.ReadLine());
+            int snow = int.Parse(Console.ReadLine());
+            int time = int.Parse(Console.ReadLine());
+            int quality = int.Parse(Console.ReadLine());
 
-            BigInteger value = (BigInteger)Math.Pow(snow / time, quality);
+            BigInteger value = BigInteger.Pow(snow / time, quality);
             
-            if (value >= biggestValue)
+            if (biggestValue < value)
             {
                 biggestValue = value;
                 biggestSnow = snow;
